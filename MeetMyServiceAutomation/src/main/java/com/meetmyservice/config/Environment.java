@@ -1,4 +1,4 @@
-package com.meetmyservice.EnvironmentVariables;
+package com.meetmyservice.config;
 
 public class Environment {
 /*
