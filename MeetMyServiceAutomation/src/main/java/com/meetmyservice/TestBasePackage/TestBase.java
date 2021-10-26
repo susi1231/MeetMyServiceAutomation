@@ -11,9 +11,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TestBase {
 
-	static WebDriver driver;
+	public static WebDriver driver;
 	
-	static Properties prop;
+	public static Properties prop;
 	
 	public TestBase() throws IOException {
 		prop=new Properties();
@@ -25,7 +25,7 @@ public class TestBase {
 	public static void initialization() {
 		String browserName=prop.getProperty("browser");
 	if (browserName.equals("chrome")) {
-		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");;
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
 		driver=new ChromeDriver();
 	}
 	driver.manage().window().maximize();

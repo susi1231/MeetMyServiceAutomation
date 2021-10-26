@@ -4,14 +4,11 @@ import java.io.IOException;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import com.meetmyservice.TestBasePackage.TestBase;
 
 public class Login extends TestBase{
- public Login() throws IOException {
-		super();
-		// TODO Auto-generated constructor stub
-	}
  
    @FindBy(xpath="//a[.='LOG IN']")
    WebElement headerLoginButton;
@@ -51,9 +48,37 @@ public class Login extends TestBase{
    //findby for logo in footer
    @FindBy(xpath = "(//img[contains(@src, './assets/images/png')])[4]")
    WebElement footerLogo;
-    
    
+ //initializing the page objects:
+   public Login() throws IOException {
+		PageFactory.initElements(driver, this);
+			
+   }
    
+   //Actions:
+   public String validateLoginPageTitle() {
+	   return driver.getTitle();
+   }
    
+   public boolean validateHeaderLogo() {
+	   return headerLogo.isDisplayed();
+   }
    
+   public boolean validateMiddleLogo() {
+	   return middleLogo.isDisplayed();
+   }
+   
+   public boolean validateFooterLogo() {
+	   return footerLogo.isDisplayed();
+   }
+   
+   public HomePage login(String un, String otp)  {
+	   memberPhnumber.sendKeys(un);
+	   getOTP.click();
+	   enterOTP.sendKeys(otp);
+	   loginButtonAfterOTP.click();
+	   
+	   return new HomePage();
+	   
+}
 }
