@@ -42,6 +42,18 @@ public class Login extends TestBase{
    */
    
    
+    //logo on header
+    @FindBy(xpath = "(//img[contains(@src, './assets/images/png')])[1]")
+    WebElement headerLogo;
+    //@findby for logo on middle
+   @FindBy(xpath = "(//img[contains(@src, './assets/images/png')])[3]")
+   WebElement middleLogo;
+   //findby for logo in footer
+   @FindBy(xpath = "(//img[contains(@src, './assets/images/png')])[4]")
+   WebElement footerLogo;
+    
+   
+   
    
    
 }
