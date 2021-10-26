@@ -12,11 +12,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class TestBase {
 
 	static WebDriver driver;
+	
 	static Properties prop;
 	
 	public TestBase() throws IOException {
 		prop=new Properties();
-		FileInputStream ip=new FileInputStream("C:\\Users\\kalyan\\git\\repository4\\MeetMyServiceAutomation\\src\\main\\java\\com\\meetmyservice\\config");
+		FileInputStream ip=new FileInputStream("C://Users//kalyan//git//repository4//MeetMyServiceAutomation//src//main//java//com//meetmyservice//config.properties");
 		prop.load(ip);
 	}
 	///MeetMyServiceAutomation/src/main/java/com/meetmyservice/config/config.properties
@@ -38,14 +39,19 @@ public class TestBase {
 	}
 	
 	 public static void main(String[] args) throws IOException {
-	 FileInputStream ip=new FileInputStream("C:\\Users\\kalyan\\git\\repository4\\MeetMyServiceAutomation\\src\\main\\java\\com\\meetmyservice\\config\\config.properties");
+	 FileInputStream ip=new FileInputStream("C://Users//kalyan//git//repository4//MeetMyServiceAutomation//src//main//java//com//meetmyservice//config//config.properties");
 	 Properties p=new Properties();
 	 p.load(ip);
-	 String url1=p.getProperty("url1");
+	 String url=p.getProperty("url");
 	 WebDriver driver=new ChromeDriver();
-	 driver.get(url1);
+	 driver.get(url);
 
 	 }
+	 
+	 public static void demo1() {
+		System.out.println("this is for demo method");
+		
+	}
 	
 	/*
 	 * Properties
