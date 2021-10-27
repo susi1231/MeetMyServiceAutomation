@@ -16,6 +16,9 @@ import com.meetmyservice.TestBasePackage.TestBase;
 public class LoginTest extends TestBase{
 	Login lg1;
 	HomePage homepage;
+	static {
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+	}
 	
     public LoginTest() throws IOException {
 		super();
@@ -31,16 +34,17 @@ public class LoginTest extends TestBase{
 	@Test(priority = 1)
 	public void loginPageTitleTest() {
 		String title=lg1.validateLoginPageTitle();
+		
 		Assert.assertEquals(title, "Sign in | Login | User Control Panel | Meet My Service");
 	}
 	
-	/*@Test(priority = 2)
-	public void loginTest() {
+	@Test(priority = 2)
+	public void loginTest() throws IOException {
 		homepage=lg1.login(prop.getProperty("memberphnumber"), prop.getProperty("enterOTP"));
 		
 	}
 	
-	*/
+	
 	
 	@AfterMethod
 	public void closebrowser() {

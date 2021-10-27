@@ -1,9 +1,14 @@
 package com.meetmyservice.PageLiberary;
 
+import java.io.IOException;
+
 import com.meetmyservice.TestBasePackage.TestBase;
 
 public class PaymentPage extends TestBase{
-public static void main(String[] args) {
-	PaymentPage pay=new PaymentPage();
-}
+
+	public PaymentPage() throws IOException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 }

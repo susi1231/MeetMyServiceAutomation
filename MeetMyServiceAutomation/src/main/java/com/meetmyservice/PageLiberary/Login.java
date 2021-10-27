@@ -72,7 +72,7 @@ public class Login extends TestBase{
 	   return footerLogo.isDisplayed();
    }
    
-   public HomePage login(String un, String otp)  {
+   public HomePage login(String un, String otp) throws IOException  {
 	   memberPhnumber.sendKeys(un);
 	   getOTP.click();
 	   enterOTP.sendKeys(otp);

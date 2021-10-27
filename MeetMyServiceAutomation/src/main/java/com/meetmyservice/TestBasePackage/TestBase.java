@@ -17,9 +17,13 @@ public class TestBase {
 	
 	public TestBase() throws IOException {
 		prop=new Properties();
-		FileInputStream ip=new FileInputStream("C://Users//kalyan//git//repository4//MeetMyServiceAutomation//src//main//java//com//meetmyservice//config.properties");
+		FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/meetmyservice"
+				+ "/config/config.properties");
 		prop.load(ip);
 	}
+	//(System.getProperty("user.dir")+ "/src/main/java/com/crm"
+	//+ "/qa/config/config.properties");
+	//C:\Users\kalyan\git\MeetMyServiceAutomation\MeetMyServiceAutomation\src\main\java\com\meetmyservice\config
 	///MeetMyServiceAutomation/src/main/java/com/meetmyservice/config/config.properties
 	
 	public static void initialization() {
@@ -38,8 +42,8 @@ public class TestBase {
 		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
 	}
 	
-	 public static void main(String[] args) throws IOException {
-	 FileInputStream ip=new FileInputStream("C://Users//kalyan//git//repository4//MeetMyServiceAutomation//src//main//java//com//meetmyservice//config//config.properties");
+	 /*public static void main(String[] args) throws IOException {
+	 FileInputStream ip=new FileInputStream("C:\\Users\\kalyan\\git\\MeetMyServiceAutomation\\MeetMyServiceAutomation\\src\\main\\java\\com\\meetmyservice\\config\\config.properties");
 	 Properties p=new Properties();
 	 p.load(ip);
 	 String url=p.getProperty("url");
@@ -47,6 +51,7 @@ public class TestBase {
 	 driver.get(url);
 
 	 }
+	 */
 	 
 	 public static void demo1() {
 		System.out.println("this is for demo method");
